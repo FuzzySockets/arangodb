@@ -36,7 +36,6 @@
 var arangodb = require("@arangodb");
 var ArangoError = arangodb.ArangoError;
 var errors = arangodb.errors;
-var preprocess = require("@arangodb/foxx/preprocessor").preprocess;
 var _ = require("lodash");
 var fs = require("fs");
 var is = require("@arangodb/is");
@@ -626,7 +625,7 @@ var mountController = function (service, routes, mount, filename) {
     foxxes: []
   };
 
-  service.run(filename, {foxxContext, preprocess});
+  service.run(filename, {foxxContext});
 
   // .............................................................................
   // routingInfo
