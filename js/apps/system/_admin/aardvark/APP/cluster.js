@@ -1,5 +1,3 @@
-/*global applicationContext*/
-
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief A Foxx.Controller to show all Foxx Applications
 ///
@@ -32,6 +30,7 @@
 
   // Initialize a new FoxxController called controller under the urlPrefix: "cluster".
   var FoxxController = require("@arangodb/foxx").Controller,
+    applicationContext = module.context,
     UnauthorizedError = require("http-errors").Unauthorized,
     internal = require("internal"),
     controller = new FoxxController(applicationContext),

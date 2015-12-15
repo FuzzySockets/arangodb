@@ -61,9 +61,9 @@ function PreprocessSpec () {
 
       testFileWithJSDocTransformed = [
         "(function() {",
-        "applicationContext.comment(\"long description\");",
-        "applicationContext.comment(\"test\");",
-        "applicationContext.comment(\"\");",
+        "module.context.comment(\"long description\");",
+        "module.context.comment(\"test\");",
+        "module.context.comment(\"\");",
         "  var x = 2;",
         "}());"
       ].join("\n");
@@ -101,7 +101,7 @@ function PreprocessorSpec () {
 
       processedLineOne = [
         "(function() {",
-        "applicationContext.comment(\"long description\");",
+        "module.context.comment(\"long description\");",
         "   * test",
         "   */",
         "  var x = 2;",

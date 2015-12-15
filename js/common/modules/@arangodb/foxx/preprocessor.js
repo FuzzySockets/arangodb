@@ -93,7 +93,7 @@ extend(Preprocessor.prototype, {
 
   convertLine: function () {
     this.iterator.replaceWith(
-      `applicationContext.comment("${this.stripComment(this.iterator.current())}");`
+      `module.context.comment("${this.stripComment(this.iterator.current())}");`
     );
   },
 

@@ -1,8 +1,8 @@
-/*global applicationContext */
 (function () {
     "use strict";
 
     var Foxx = require("@arangodb/foxx"),
+        applicationContext = module.context,
         users = require("@arangodb/users"),
         controller = new Foxx.Controller(applicationContext),
         url = require("url"),

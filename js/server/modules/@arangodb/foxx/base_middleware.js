@@ -382,7 +382,7 @@ function BaseMiddleware() {
 ///
 /// ```js
 /// response.sendFile('/tmp/results.json');
-/// response.sendFile(applicationContext.fileName('image.png'), { lastModified: true });
+/// response.sendFile(module.context.fileName('image.png'), { lastModified: true });
 /// ```
 /// @endDocuBlock
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,7 +1,7 @@
 'use strict';
 var Foxx = require('@arangodb/foxx');
 var queue = Foxx.queues.get('default');
-var ctrl = new Foxx.Controller(applicationContext);
+var ctrl = new Foxx.Controller(module.context);
 
 ctrl.post('/', function (req, res) {
   try {

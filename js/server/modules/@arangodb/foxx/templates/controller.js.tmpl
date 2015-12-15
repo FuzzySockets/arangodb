@@ -2,6 +2,7 @@
 var _ = require('lodash');
 var joi = require('joi');
 var Foxx = require('@arangodb/foxx');
+var applicationContext = module.context;
 var ArangoError = require('@arangodb').ArangoError;
 var <%= repository %> = require('../<%= repositoryPath %>');
 var <%= model %> = require('../<%= modelPath %>');

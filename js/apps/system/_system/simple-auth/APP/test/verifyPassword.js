@@ -7,7 +7,7 @@
 
   mockuire = require('mockuire')(module, {
     'js': {compile: function (src) {
-      return 'var applicationContext = require("applicationContext");\n' + src;
+      return 'var applicationContext = require("@@context");\n' + src;
     }}
   });
 
@@ -15,7 +15,7 @@
     var cfg = {}, crypto = {}, verifyPassword;
 
     verifyPassword = mockuire('../auth', {
-      applicationContext: {configuration: cfg},
+      '@@context': {configuration: cfg},
       '@arangodb/crypto': crypto
     }).verifyPassword;
 

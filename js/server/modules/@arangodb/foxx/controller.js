@@ -252,10 +252,10 @@ class Controller {
 ////////////////////////////////////////////////////////////////////////////////
 /// @startDocuBlock JSF_foxx_controller_initializer
 ///
-/// `new Controller(applicationContext, options)`
+/// `new Controller(module.context, options)`
 ///
 /// This creates a new Controller. The first argument is the controller
-/// context available in the variable *applicationContext*. The second one is an
+/// context available in the variable *module.context*. The second one is an
 /// options array with the following attributes:
 ///
 /// * *urlPrefix*: All routes you define within will be prefixed with it.
@@ -263,7 +263,7 @@ class Controller {
 /// @EXAMPLES
 ///
 /// ```js
-/// app = new Controller(applicationContext, {
+/// app = new Controller(module.context, {
 ///   urlPrefix: "/meadow"
 /// });
 /// ```

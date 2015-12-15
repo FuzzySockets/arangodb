@@ -1,5 +1,3 @@
-/*global applicationContext*/
-
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief A Foxx.Controller to show all Foxx Applications
 ///
@@ -30,6 +28,7 @@
   "use strict";
 
   var FoxxController = require("@arangodb/foxx").Controller,
+    applicationContext = module.context,
     controller = new FoxxController(applicationContext),
     cluster = require("@arangodb/cluster"),
     ArangoError = require("@arangodb").ArangoError,

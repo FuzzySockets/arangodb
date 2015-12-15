@@ -1,5 +1,4 @@
 /*jslint indent: 2, nomen: true, maxlen: 100, white: true, plusplus: true, unparam: true */
-/*global applicationContext */
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief An example Foxx-Application for ArangoDB
@@ -33,6 +32,7 @@
 
   // initialize a new FoxxApplication
   var FoxxApplication = require("@arangodb/foxx").Controller;
+  var applicationContext = module.context;
   var controller = new FoxxApplication(applicationContext);
 
   // include console module so we can log something (in the server's log)

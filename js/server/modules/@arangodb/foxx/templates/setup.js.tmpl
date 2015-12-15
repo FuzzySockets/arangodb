@@ -1,5 +1,6 @@
 'use strict';
 var db = require("@arangodb").db;
+var applicationContext = module.context;
 
 function createCollection(name) {
   var collectionName = applicationContext.collectionName(name);

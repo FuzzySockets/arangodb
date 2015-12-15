@@ -1,5 +1,3 @@
-/*global applicationContext*/
-
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief A Foxx.Controller to generate new FoxxApps
 ///
@@ -30,6 +28,7 @@
   "use strict";
 
   var FoxxController = require("@arangodb/foxx").Controller,
+      applicationContext = module.context,
       UnauthorizedError = require("http-errors").Unauthorized,
       internal = require("internal"),
       Configuration = require("./models/configuration").Model,

@@ -1,4 +1,4 @@
-/*global applicationContext, ArangoServerState, ArangoClusterInfo, ArangoClusterComm*/
+/*global ArangoServerState, ArangoClusterInfo, ArangoClusterComm*/
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief A Foxx.Controller to handle the statistics
@@ -33,6 +33,7 @@
   var actions = require("@arangodb/actions");
 
   var FoxxController = require("@arangodb/foxx").Controller;
+  var applicationContext = module.context;
   var UnauthorizedError = require("http-errors").Unauthorized;
   var controller = new FoxxController(applicationContext);
   var db = require("@arangodb").db;

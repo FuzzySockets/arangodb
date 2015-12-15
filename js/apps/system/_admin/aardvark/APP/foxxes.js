@@ -1,4 +1,3 @@
-/*global applicationContext */
 "use strict";
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -33,6 +32,7 @@
   var db = require("@arangodb").db;
   var NotFound = require("http-errors").NotFound;
   var FoxxController = require("@arangodb/foxx").Controller;
+  var applicationContext = module.context;
   var UnauthorizedError = require("http-errors").Unauthorized;
   var controller = new FoxxController(applicationContext);
   var ArangoError = require("@arangodb").ArangoError;

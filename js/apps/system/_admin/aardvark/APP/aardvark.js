@@ -1,5 +1,4 @@
 /*jshint globalstrict: true */
-/*global applicationContext*/
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief A Foxx.Controller to show all Foxx Applications
@@ -31,6 +30,7 @@
 "use strict";
 
 var Foxx = require("@arangodb/foxx");
+var applicationContext = module.context;
 var publicController = new Foxx.Controller(applicationContext);
 var controller = new Foxx.Controller(applicationContext);
 var underscore = require("lodash");

@@ -1,6 +1,6 @@
-/*global applicationContext */
 'use strict';
 var crypto = require('@arangodb/crypto'),
+  applicationContext = module.context,
   cfg = applicationContext.configuration;
 
 function verifyPassword(authData, password) {
