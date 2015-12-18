@@ -25,7 +25,7 @@ class FoxxContext {
   }
 
   fileName(filename) {
-    return fs.safeJoin(this._prefix, filename);
+    return fs.safeJoin(this.basePath, filename);
   }
 
   file(filename, encoding) {
@@ -33,7 +33,7 @@ class FoxxContext {
   }
 
   path(name) {
-    return path.join(this._prefix, name);
+    return path.join(this.basePath, name);
   }
 
   collectionName(name) {
@@ -49,10 +49,6 @@ class FoxxContext {
 
   collection(name) {
     return internal.db._collection(this.collectionName(name));
-  }
-
-  get _prefix() {
-    return this.basePath;
   }
 
   get baseUrl() {
