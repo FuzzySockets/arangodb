@@ -27,8 +27,8 @@
 /// @author Copyright 2013, triAGENS GmbH, Cologne, Germany
 ////////////////////////////////////////////////////////////////////////////////
 
-const RequestContext = require('@arangodb/foxx/request_context');
-const BaseMiddleware = require('@arangodb/foxx/base_middleware').BaseMiddleware;
+const RequestContext = require('@arangodb/foxx/legacy/request_context');
+const BaseMiddleware = require('@arangodb/foxx/legacy/base_middleware').BaseMiddleware;
 const _ = require('lodash');
 const is = require('@arangodb/is');
 const internal = require('@arangodb/foxx/internals');
@@ -44,7 +44,7 @@ var authControllerProps = {
 /// @brief Get the users of this controller
 ////////////////////////////////////////////////////////////////////////////////
   getUsers() {
-    const foxxAuthentication = require('@arangodb/foxx/authentication');
+    const foxxAuthentication = require('@arangodb/foxx/legacy/authentication');
     return new foxxAuthentication.Users(this.applicationContext);
   },
 
@@ -90,7 +90,7 @@ var authControllerProps = {
 /// @endDocuBlock
 ////////////////////////////////////////////////////////////////////////////////
   login(route, opts) {
-    var authentication = require('@arangodb/foxx/authentication');
+    var authentication = require('@arangodb/foxx/legacy/authentication');
     return this.post(route, authentication.createStandardLoginHandler(this.getAuth(), this.getUsers(), opts));
   },
 
@@ -127,7 +127,7 @@ var authControllerProps = {
 /// @endDocuBlock
 ////////////////////////////////////////////////////////////////////////////////
   logout(route, opts) {
-    var authentication = require('@arangodb/foxx/authentication');
+    var authentication = require('@arangodb/foxx/legacy/authentication');
     return this.post(route, authentication.createStandardLogoutHandler(this.getAuth(), opts));
   },
 
@@ -175,7 +175,7 @@ var authControllerProps = {
 /// @endDocuBlock
 ////////////////////////////////////////////////////////////////////////////////
   register(route, opts) {
-    var authentication = require('@arangodb/foxx/authentication');
+    var authentication = require('@arangodb/foxx/legacy/authentication');
     return this.post(
       route,
       authentication.createStandardRegistrationHandler(this.getAuth(), this.getUsers(), opts)
@@ -216,7 +216,7 @@ var authControllerProps = {
 /// @endDocuBlock
 ////////////////////////////////////////////////////////////////////////////////
   changePassword(route, opts) {
-    var authentication = require('@arangodb/foxx/authentication');
+    var authentication = require('@arangodb/foxx/legacy/authentication');
     return this.post(route, authentication.createStandardChangePasswordHandler(this.getUsers(), opts));
   }
 };
@@ -242,7 +242,7 @@ var sessionControllerProps = {
     if (!method || typeof this[method] !== 'function') {
       method = 'post';
     }
-    var sessions = require('@arangodb/foxx/sessions');
+    var sessions = require('@arangodb/foxx/legacy/sessions');
     return this[method](route, sessions.createDestroySessionHandler(this.getSessions(), opts));
   }
 };
@@ -707,7 +707,7 @@ class Controller {
 /// @endDocuBlock
 ////////////////////////////////////////////////////////////////////////////////
   activateAuthentication(opts) {
-    var authentication = require('@arangodb/foxx/authentication');
+    var authentication = require('@arangodb/foxx/legacy/authentication');
     _.extend(this, authControllerProps);
 
     this.auth = authentication.createAuthObject(this.applicationContext, opts);
@@ -720,7 +720,7 @@ class Controller {
 ////////////////////////////////////////////////////////////////////////////////
 
   activateSessions(opts) {
-    var sessions = require('@arangodb/foxx/sessions');
+    var sessions = require('@arangodb/foxx/legacy/sessions');
     _.extend(this, sessionControllerProps);
 
     this.sessions = new sessions.Sessions(opts);
