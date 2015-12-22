@@ -31,7 +31,7 @@ const RequestContext = require('@arangodb/foxx/legacy/request_context');
 const BaseMiddleware = require('@arangodb/foxx/legacy/base_middleware').BaseMiddleware;
 const _ = require('lodash');
 const is = require('@arangodb/is');
-const internal = require('@arangodb/foxx/internals');
+const internal = require('@arangodb/foxx/legacy/internals');
 const swagger = require('@arangodb/foxx/swagger');
 
 // -----------------------------------------------------------------------------
